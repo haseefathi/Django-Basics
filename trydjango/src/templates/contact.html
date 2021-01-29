@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Contact Page</h2>
+    <p>
+        Name: {{ name|title }}<br>
+        Age: {{ age }}<br>
+        Phone: {{ phone }}<br>
+        HTML: {{my_html|safe}}
+    </p>
+    <h3>Family:</h3>
+    <ul>
+        {% for name in family %}
+            {% if name == "sudy" %}
+                <li>{{forloop.counter}}.It's the sister</li>
+            {% elif name == "vapa" or name == "umma" %}
+                <li>{{forloop.counter}}.Its's a parent
+                    {% if name == "vapa" %}
+                        - Dad
+                    {%else%}
+                        - Mom
+                    {%endif%}
+                </li>
+            {% elif name == 123 %}
+                <li>{{forloop.counter}}.{{name|add:27}}</li>
+            {% else %}
+                <li>{{forloop.counter}}.Not part of family</li>
+            {%endif%}
+        {%endfor%}
+    </ul>
+    <a href="/">Back to home</a> 
+{% endblock %}
