@@ -1,0 +1,4 @@
+<form method="POST"> {% csrf_token %}
+    <h2>Confirm delete of post: {{object.title}}?</h2>
+    <p><input type="submit" value="Yes" /><a href="./">Cancel</a></p>
+</form>

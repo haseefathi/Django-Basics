@@ -1,0 +1,4 @@
+<h2>List of all articles</h2>
+{% for article in object_list %}
+<p>{{ article.id }}. <a href="{{article.get_absolute_url}}">{{article.title}}</a></p>
+{% endfor %}

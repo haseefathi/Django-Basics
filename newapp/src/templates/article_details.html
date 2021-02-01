@@ -1,0 +1,10 @@
+<h3>Article: {{object.title}}</h3>
+<p>Description:<br>{{object.content}}</p>
+<p>
+    Active:
+    {% if object.active %}
+        Yes
+    {% else %}
+        No
+    {% endif %}
+</p>
